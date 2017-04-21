@@ -46,7 +46,7 @@ class App():
         self.m2_entry = Entry(master, textvariable=self.m2)
         self.m2_entry.grid(column=2, row=3)
 
-        self.radius_label = Label(master, text="Distance (m)")
+        self.radius_label = Label(master, text="Radius (m)")
         self.radius_label.grid(column=1, row=4)
 
         self.radius_entry = Entry(master, textvariable=self.radius)
@@ -66,5 +66,6 @@ class App():
 
 if __name__ == "__main__":
     root = Tk()
+    root.title("Universal Gravity Calculator")
     my_app = App(root)
     root.mainloop()
