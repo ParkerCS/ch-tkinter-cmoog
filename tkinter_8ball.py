@@ -13,14 +13,14 @@
 # - Get your random answer message from a list of at least 10 possible strings. (e.g. ["Yes", "No", "Most Likely", "Definitely", etc...])
 # - Add THREE or more other style modifications to make your app unique (font family, font size, color, padding, image, borders, justification, whatever you can find in tkinter library etc.)  Make a comment at the top or bottom of your code to tell me your 3 things you did. (Just to help me out in checking your assignment)
 
+'''I changed the font, the border of the title, and the foregroud/background colors.  '''
 from tkinter import *
 from tkinter import font
 import random
 class App():
     def __init__(self, master):
         # fonts
-        self.title_font = font.Font(family="Calibri", size=20, weight=font.BOLD)
-
+        self.title_font = font.Font(family="Times", size=20, weight=font.BOLD)
         self.entry_text = DoubleVar()
         self.entry_text.set("")
 
@@ -28,8 +28,6 @@ class App():
         self.answer_text.set("Your Fortune Here")
 
         self.answer_text_options = ["Yes!", "Not a change", "No way!", "Most likely", "Probably?", "I wouldn't be surprised...", "Maybe", 'Without a doubt', 'I wouldn\'t count on it', 'Ask again later']
-
-
 
         self.instructions = Label(master, text="Enter a \"yes or no\" question below:")
         self.instructions.grid(column=1, row=2)
