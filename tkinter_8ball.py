@@ -27,7 +27,7 @@ class App():
         self.answer_text = DoubleVar()
         self.answer_text.set("Your Fortune Here")
 
-        self.answer_text_options = ["Yes!", "Not a change", "No way!", "Most likely", "Probably?", "I wouldn't be surprised...", "Maybe", 'Without a doubt', 'I wouldn\'t count on it', 'Ask again later']
+        self.answer_text_options = ["Yes!", "Not a chance", "No way!", "Most likely", "Probably?", "I wouldn't be surprised...", "Maybe", 'Without a doubt', 'I wouldn\'t count on it', 'Ask again later']
 
         self.instructions = Label(master, text="Enter a \"yes or no\" question below:")
         self.instructions.grid(column=1, row=2)
@@ -52,3 +52,4 @@ if __name__ == "__main__":
     root = Tk()
     my_app = App(root)
     root.mainloop()
+
