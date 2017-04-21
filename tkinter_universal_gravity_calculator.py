@@ -19,3 +19,52 @@
 # - Add an exception for the possible entry of zero radius (ZeroDivisionError Exception)
 # - Make your app unique by changing 3 or more DIFFERENT style attributes or kwargs for your app.  Perhaps consider: fonts, color, padding, widths, etc).  Put a comment in your code to tell me what you changed. If you change the font for all the widgets, that is ONE thing.  If you add padx to all your app widgets, that is ONE thing.  If you change the color of all your blocks, that is ONE thing.
 
+from tkinter import *
+from tkinter import font
+import random
+class App():
+    def __init__(self, master):
+        self.title_font = font.Font(family="Times New Roman", size=15, weight=font.BOLD)
+        self.m1 = DoubleVar()
+        self.m2 = DoubleVar()
+        self.radius = DoubleVar()
+        self.answer = DoubleVar()
+
+
+        self.title = Label(master, text="Gravity Calculator", font=self.title_font, relief='raised', borderwidth=4)
+        self.title.grid(column=1, row=1, columnspan=2)
+
+        self.m1_label = Label(master, text="Mass of 1st Obj (kg)")
+        self.m1_label.grid(column=1, row=2)
+
+        self.m1_entry = Entry(master, textvariable=self.m1)
+        self.m1_entry.grid(column=2, row=2)
+
+        self.m2_label = Label(master, text="Mass of 2nd Obj (kg)")
+        self.m2_label.grid(column=1, row=3)
+
+        self.m2_entry = Entry(master, textvariable=self.m2)
+        self.m2_entry.grid(column=2, row=3)
+
+        self.radius_label = Label(master, text="Distance (m)")
+        self.radius_label.grid(column=1, row=4)
+
+        self.radius_entry = Entry(master, textvariable=self.radius)
+        self.radius_entry.grid(column=2, row=4)
+
+        self.calc_button = Button(master, text="Calculate Force (N)",
+                                  command=lambda: self.calculate())
+        self.calc_button.grid(column=1, row=5, columnspan=2)
+
+        self.answer_label = Label(master, textvariable=self.answer)
+        self.answer_label.grid(column=1, row=6, columnspan=2)
+
+    def calculate(self):
+        g = 6.67 * (10 ** -11)
+        self.answer.set((g * self.m1.get() * self.m2.get()) / (self.radius.get() ** 2))
+
+
+if __name__ == "__main__":
+    root = Tk()
+    my_app = App(root)
+    root.mainloop()
