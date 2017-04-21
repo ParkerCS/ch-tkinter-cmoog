@@ -50,6 +50,7 @@ class App():
         self.answer_text.set(self.answer_text_options[random.randrange(len(self.answer_text_options))])
 if __name__ == "__main__":
     root = Tk()
+    root.title("Magic 8 Ball")
     my_app = App(root)
     root.mainloop()
 
