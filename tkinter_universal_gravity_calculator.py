@@ -34,7 +34,6 @@ class App():
         self.radius.set("6.371e6")
         self.answer = DoubleVar()
 
-
         self.title = Label(master, text="Gravity Calculator", font=self.title_font, relief='raised', borderwidth=4, fg='red')
         self.title.grid(column=1, row=1, columnspan=2)
 
