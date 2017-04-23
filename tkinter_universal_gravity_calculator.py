@@ -67,7 +67,10 @@ class App():
 
     def calculate(self):
         g = 6.67 * (10 ** -11)
-        self.answer.set((g * self.m1.get() * self.m2.get()) / (self.radius.get() ** 2))
+        try:
+            self.answer.set((g * self.m1.get() * self.m2.get()) / (self.radius.get() ** 2))
+        except:
+            self.answer.set("ERROR")
 
 
 if __name__ == "__main__":
