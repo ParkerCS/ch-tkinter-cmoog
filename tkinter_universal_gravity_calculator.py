@@ -19,6 +19,7 @@
 # - Add an exception for the possible entry of zero radius (ZeroDivisionError Exception)
 # - Make your app unique by changing 3 or more DIFFERENT style attributes or kwargs for your app.  Perhaps consider: fonts, color, padding, widths, etc).  Put a comment in your code to tell me what you changed. If you change the font for all the widgets, that is ONE thing.  If you add padx to all your app widgets, that is ONE thing.  If you change the color of all your blocks, that is ONE thing.
 
+'''I added a border to the title -- changed the font to Times New Roman -- and chagned the color of the title'''
 from tkinter import *
 from tkinter import font
 import random
@@ -26,12 +27,15 @@ class App():
     def __init__(self, master):
         self.title_font = font.Font(family="Times New Roman", size=15, weight=font.BOLD)
         self.m1 = DoubleVar()
+        self.m1.set("5.972e24")
         self.m2 = DoubleVar()
+        self.m2.set("50")
         self.radius = DoubleVar()
+        self.radius.set("6.371e6")
         self.answer = DoubleVar()
 
 
-        self.title = Label(master, text="Gravity Calculator", font=self.title_font, relief='raised', borderwidth=4)
+        self.title = Label(master, text="Gravity Calculator", font=self.title_font, relief='raised', borderwidth=4, fg='red')
         self.title.grid(column=1, row=1, columnspan=2)
 
         self.m1_label = Label(master, text="Mass of 1st Obj (kg)")
@@ -55,6 +59,9 @@ class App():
         self.calc_button = Button(master, text="Calculate Force (N)",
                                   command=lambda: self.calculate())
         self.calc_button.grid(column=1, row=5, columnspan=2)
+
+        #self.earth_mass = Button(master, text="Mass of Earth", command=lambda: master.focus_get().cget("textvariable").set(5.972e24))
+        #self.earth_mass.grid(column=3, row=2)
 
         self.answer_label = Label(master, textvariable=self.answer)
         self.answer_label.grid(column=1, row=6, columnspan=2)
